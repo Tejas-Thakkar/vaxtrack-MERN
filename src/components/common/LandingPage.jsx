@@ -37,27 +37,27 @@ const LandingPage = () => {
               <div className="d-flex mx-auto flex-column flex-lg-row align-items-center">
                 <ul className="navbar-nav  ">
                   <li className="nav-item active">
-              <a className="nav-link" href="index.html">
-                Home <span className="sr-only">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="about.html">
-                {" "}
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="service.html">
-                {" "}
-                Services{" "}
-              </a>
-            </li>
+                    <a className="nav-link" href="index.html">
+                      Home <span className="sr-only"></span>
+                    </a>
+                  </li>
                   <li className="nav-item">
-              <a className="nav-link" href="#contactLink">
-                Contact Us
-              </a>
-            </li>
+                    <a className="nav-link" href="about.html">
+                      {" "}
+                      About
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="service.html">
+                      {" "}
+                      Services{" "}
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#contactLink">
+                      Contact Us
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className="quote_btn-container ">
@@ -93,8 +93,10 @@ const LandingPage = () => {
                 <div className="row">
                   <div className="col-md-6 ">
                     <div className="detail_box">
-                      <h1>VAXTRACK</h1>
-                      <p>
+                      <h1 >VAXTRACK</h1>
+
+                      {/* <p style={{paddingLeft:"30px",fontFamily:"monospace",color:"GrayText"}}> */}
+                      <p style={{ fontFamily: "monospace", color: "GrayText" }}>
                         It is a long established fact that a reader will be
                         distracted by the readable content of a page when
                         looking
@@ -183,7 +185,7 @@ const LandingPage = () => {
               role="button"
               data-slide="prev"
             >
-              <span className="sr-only">Previous</span>
+              <span className="sr-only"></span>
             </a>
             <a
               className="carousel-control-next"
@@ -191,7 +193,7 @@ const LandingPage = () => {
               role="button"
               data-slide="next"
             >
-              <span className="sr-only">Next</span>
+              <span className="sr-only"></span>
             </a>
           </div>
         </div>
