@@ -1,3 +1,5 @@
+
+
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -62,6 +64,8 @@ export const SignUp = () => {
     </div>
   );
 };
+
+
 // import React from 'react'
 // 67bfe3db45f0628c57dda5c2
 // export const SignUp = () => {

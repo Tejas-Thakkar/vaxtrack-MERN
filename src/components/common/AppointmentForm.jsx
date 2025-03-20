@@ -57,7 +57,8 @@ export const AppointmentForm = () => {
 
   const submitHandler = async (data) => {
     data.userId = localStorage.getItem("id");
-    const res = await axios.post("/appointment/add", data);
+    const res = await axios.post("/appointment/add", data)
+    
     console.log(res.data);
   };
 
@@ -68,6 +69,23 @@ export const AppointmentForm = () => {
           <div className="card p-4 shadow">
             <h2 className="text-center mb-4">Book an Appointment</h2>
             <form onSubmit={handleSubmit(submitHandler)}>
+            <div className="mb-3">
+                <label className="form-label">Full Name</label>
+                <input type="text" className="form-control" {...register("userName")} required />
+              </div>
+              <div className="mb-3">
+                <label className="form-label">Age</label>
+                <input type="number" className="form-control" {...register("age")} required />
+              </div>
+              <div className="mb-3">
+                <label className="form-label">Gender</label>
+                <select className="form-select" {...register("gender")} required>
+                  <option value="">SELECT GENDER</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
               <div className="mb-3">
                 <label className="form-label">Select Healthcare Provider</label>
                 <select className="form-select" {...register("ProviderType")}> 
@@ -127,6 +145,14 @@ export const AppointmentForm = () => {
               <div className="mb-3">
                 <label className="form-label">Appointment Date</label>
                 <input type="date" className="form-control" {...register("appointmentDate")} />
+              </div>
+              <div className="mb-3">
+                <label className="form-label">Status</label>
+                <select className="form-select" {...register("status")}> 
+                <option value="Scheduled">Scheduled</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
               </div>
               <button type="submit" className="btn btn-primary w-100">Book Appointment</button>
             </form>

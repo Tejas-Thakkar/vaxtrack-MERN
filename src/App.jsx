@@ -9,10 +9,15 @@ import axios from 'axios'
 // import { UserProfile } from './components/user/UserProfile'
 import { Login } from './components/common/Login'
 import { SignUp } from './components/common/SignUp'
+
 // import { DemoForm } from './components/layouts/DemoForm'
 // import { AdminLogin } from './components/admin/AdminLogin'
 import { AppointmentForm } from "./components/common/AppointmentForm"; // Adjust path
+//import LandingPage from './components/common/LandingPage'
+//import PrivateRoutes from "./hooks/PrivateRoutes";
 // import { VaxAppointment } from './components/patient portal/VaxAppointment'
+import PrivateRoutes from './hooks/PrivateRoutes';
+import LandingPage from './components/common/LandingPage'
 
 
 
@@ -47,6 +52,7 @@ function App() {
             </Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
+            <Route path = "/" element = {<LandingPage/>}></Route>
             {/* <Route path="/demoform" element={<DemoForm/>}></Route> */}
             {/* <Route path="/adminlogin" element={<AdminLogin/>}></Route>  */}
             {/* <Route path="/appointment" element={<VaxAppointment/>}></Route> */}
