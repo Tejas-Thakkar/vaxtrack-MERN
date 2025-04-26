@@ -2,50 +2,51 @@ import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-// import "../../assets/login.css";
+import "../../assets/login.css";
 
-export const Login = () => {
-  const navigate = useNavigate();
+const AdminLogin = () => {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   const submitHandler = async (data) => {
-    try {
-      const res = await axios.post("/user/login", data);
-      if (res.status === 200) {
-        toast.success("Login successful!");
-        localStorage.setItem("id", res.data.data._id);
-        localStorage.setItem("role", res.data.data.roleId.name);
+    const allowedAdminEmail = "admin@vaxtrack.com"; // Only allow login with this email
 
-        if (res.data.data.roleId.role === "USER") {
-          navigate("/user/dashboard2");
-        } else if (res.data.data.roleId.role === "healthcare_provider") {
-          navigate("/heathcareprovider");
-        } 
-      } else {
-        toast.error("Login failed! Please try again.");
-      }
+    if (data.email !== allowedAdminEmail) {
+      alert("Unauthorized! Only admin can login.");
+      return;
+    }
+
+    try {
+      const res = await axios.post("http://localhost:3000/admin/login", data);
+
+      alert("Admin Logged In Successfully!");
+
+      // Store admin info in localStorage
+      localStorage.setItem("id", res.data.data._id);
+      localStorage.setItem("role", res.data.data.roleId);
+
+      // Redirect to admin dashboard
+      navigate("/dashboard"); // Redirect to admin dashboard
     } catch (error) {
-      toast.error("Invalid credentials!");
+      console.error(error);
+      alert("Invalid credentials!");
     }
   };
 
   return (
     <div className="login">
-      <ToastContainer position="top-center" autoClose={3000} />
       <div className="login-card">
         <div className="brand">
-          <h2>LOGIN USER</h2>
-          <p>Enter your credentials to access your account</p>
+          <h2>Admin Login</h2>
+          <p>Enter your credentials to access the admin dashboard</p>
         </div>
         <form onSubmit={handleSubmit(submitHandler)}>
           <div className="form-group">
             <label htmlFor="email">EMAIL</label>
             <input
-              type="text"
+              type="email"
               id="email"
-              {...register("email")}
+              {...register("email", { required: true })}
               placeholder="Enter email"
             />
           </div>
@@ -54,7 +55,7 @@ export const Login = () => {
             <input
               type="password"
               id="password"
-              {...register("password")}
+              {...register("password", { required: true })}
               placeholder="Enter password"
             />
           </div>
@@ -87,3 +88,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default AdminLogin;

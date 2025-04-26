@@ -1,3 +1,27 @@
+/* Toggle Buttons */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.toggle-buttons button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+
 /* Signup Page Styles */
 .signup {
     display: flex;
@@ -13,6 +37,7 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
+    height: 10vh;
     text-align: center;
   }
   

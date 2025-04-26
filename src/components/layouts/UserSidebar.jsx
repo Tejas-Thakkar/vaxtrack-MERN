@@ -2,7 +2,7 @@ import React from 'react'
 import { UserNavbar } from './UserNavbar'
 import { Link,Outlet } from 'react-router-dom'
 import { useState } from 'react'
-
+import logo from '/Vaxtrack/frontend/public/assets/img/credit/logo.svg'
 
 export const UserSidebar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -23,12 +23,17 @@ export const UserSidebar = () => {
         <div className="sidebar-brand">
           <a href="./index.html" className="brand-link">
             <img
-              src="../../dist/assets/img/AdminLTELogo.png"
+              src="/public/assets/img/credit/logo.svg"
               // alt="AdminLTE Logo"
-              className="brand-image opacity-75 shadow"
+              className="brand-image shadow"
+              style={{
+                height: '70px',      // Increase size
+                width: '140px',       // Maintain aspect ratio
+                filter: 'brightness(4)', // Make it appear lighter
+              }}
             />
 
-            <span className="brand-text fw-light">AdminLTE 4</span>
+            <span className="brand-text fw-light"></span>
           </a>
         </div>
 
@@ -55,70 +60,83 @@ export const UserSidebar = () => {
               role="menu"
               data-accordion="false"
             >
+              <li className="nav-item">
+                    <Link to="dashboard2" className="nav-link active">
+                      <i className="nav-icon bi bi-circle" />
+                      <h6>My profile</h6>
+                    </Link>
+                  </li>
               <li className="nav-item menu-open">
                 <Link to ="appointment" className="nav-link active">
                   <i className="nav-icon bi bi-speedometer" />
-                  <p>
-                    BooK Appointment
+                  <h6>
+                    Book Appointment
                     <i className="nav-arrow bi bi-chevron-right" />
-                  </p>
+                  </h6>
                 </Link>
-                <ul className="nav nav-treeview">
-                  <li className="nav-item">
-                    <a href="./index.html" className="nav-link active">
+                {/* <ul className="nav nav-treeview"> */}
+                  {/* <li className="nav-item">
+                    <Link to="healthcareprovider" className="nav-link active">
                       <i className="nav-icon bi bi-circle" />
-                      <p>HeathCare Provider</p>
-                    </a>
+                      <h6>HealthCare Provider</h6>
+                    </Link>
+                  </li> */}
+                  <li className="nav-item">
+                    <Link to="vaccinationcenter" className="nav-link active">
+                      <i className="nav-icon bi bi-circle" />
+                      <h6>Vaccination Center</h6>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a href="./index2.html" className="nav-link">
+                    <Link to="vaccinereminders" className="nav-link">
                       <i className="nav-icon bi bi-circle" />
-                      <p>Vaccines</p>
-                    </a>
+                      <h6>Vaccines Reminders</h6>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a href="./index3.html" className="nav-link">
+                    <Link to="/user/certificate" className="nav-link">
                       <i className="nav-icon bi bi-circle" />
-                      <p></p>
-                    </a>
+                      <h6>Download Certificate</h6>
+                    </Link>
                   </li>
-                </ul>
+                {/* </ul> */}
               </li>
-              <li className="nav-item">
+              
+              {/* <li className="nav-item">
                 <a href="./generate/theme.html" className="nav-link">
                   <i className="nav-icon bi bi-palette" />
                   <p></p>
                 </a>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <a href="#" className="nav-link">
                   <i className="nav-icon bi bi-box-seam-fill" />
                   <p>
                     
                     <i className="nav-arrow bi bi-chevron-right" />
                   </p>
-                </a>
-                <ul className="nav nav-treeview">
-                  <li className="nav-item">
+                </a> */}
+                {/* <ul className="nav nav-treeview"> */}
+                  {/* <li className="nav-item">
                     <a href="./widgets/small-box.html" className="nav-link">
                       <i className="nav-icon bi bi-circle" />
                       <p>Small Box</p>
-                    </a>
-                  </li>
-                  <li className="nav-item">
+                    </a>  
+                  </li> */}
+                  {/* <li className="nav-item">
                     <a href="./widgets/info-box.html" className="nav-link">
                       <i className="nav-icon bi bi-circle" />
                       <p>info Box</p>
                     </a>
-                  </li>
-                  <li className="nav-item">
+                  </li> */}
+                  {/* <li className="nav-item">
                     <a href="./widgets/cards.html" className="nav-link">
                       <i className="nav-icon bi bi-circle" />
                       <p>Cards</p>
                     </a>
-                  </li>
-                </ul>
-              </li>
+                  </li> */}
+                {/* </ul> */}
+              {/* </li> */}
             </ul>
             
           </nav>

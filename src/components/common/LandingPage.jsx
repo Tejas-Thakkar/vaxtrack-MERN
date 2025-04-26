@@ -4,6 +4,7 @@ import "../../assets/landingPage.css";
 import "../../assets/landing/css/style.css";
 import "../../assets/landing/css/responsive.css";
 import about2image from "../../assets/landing/images/about-img2.png";
+
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
@@ -93,13 +94,12 @@ const LandingPage = () => {
                 <div className="row">
                   <div className="col-md-6 ">
                     <div className="detail_box">
-                      <h1 >VAXTRACK</h1>
+                      <h1 style={{ color: "purple" }}>VAXTRACK</h1>
 
                       {/* <p style={{paddingLeft:"30px",fontFamily:"monospace",color:"GrayText"}}> */}
-                      <p style={{ fontFamily: "monospace", color: "GrayText" }}>
-                        It is a long established fact that a reader will be
-                        distracted by the readable content of a page when
-                        looking
+                      <p style={{ fontFamily: "monospace", color: "black", fontWeight: "bold", fontSize: "1.2rem", background: "2px 2px 8px rgba(0, 0, 0, 0.7)" }}>
+                        A comprehensive platform designed to streamline vaccination processes, manage patient records,
+                        and optimize inventory for healthcare providers.
                       </p>
                       <div className="btn-box">
                         <a href="" className="btn-1">
@@ -178,7 +178,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="carousel_btn-container">
+          {/* <div className="carousel_btn-container">
             <a
               className="carousel-control-prev"
               href="#carouselExampleIndicators"
@@ -195,7 +195,7 @@ const LandingPage = () => {
             >
               <span className="sr-only"></span>
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="about_section ">
@@ -212,9 +212,7 @@ const LandingPage = () => {
                   <h2>About Us</h2>
                 </div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud
+                  VaxTrack is a comprehensive Vaccination Management System designed to simplify immunization scheduling, tracking, and record-keeping. Built with the MERN stack, it provides a seamless experience for patients and healthcare providers by enabling appointment booking, automated reminders, and secure digital access to vaccination records. Our mission is to enhance public health by ensuring timely vaccinations, reducing paperwork, and promoting immunization awareness through a user-friendly and efficient platform.
                 </p>
                 <a href="">Read More</a>
               </div>

@@ -61,12 +61,15 @@ body {
 
 /*header section*/
 .hero_area {
-  height: 98vh;
+  width: 100%;
+  height: 140vh;
   position: relative;
-  background-image: url(../images/hero-bg.png);
+  background-image: url("../../../components/layouts/images/Landingbg.jpeg");
+  /* background-image: url(../images/.png); */
   background-size: cover;
   background-position: bottom;
 }
+
 
 .sub_page .hero_area {
   height: auto;
@@ -333,9 +336,11 @@ a:focus {
   background-color: #041858;
 }
 
-.slider_section .carousel_btn-container .carousel-control-prev {
-  background-image: url(../images/left-angle.png);
-}
+/* .slider_section .carousel_btn-container .carousel-control-prev {
+  background-image: url("");
+} */
+
+
 
 .slider_section .carousel_btn-container .carousel-control-next {
   background-image: url(../images/right-angle.png);
@@ -901,4 +906,5 @@ a:focus {
 .footer_section a {
   color: #ffffff;
 }
+
 /*# sourceMappingURL=style.css.map */
