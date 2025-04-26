@@ -30,6 +30,22 @@ const addHealthcareProviders = async (req, res) => {
         }
     }
 
+    const deleteHealthcareProvider = async (req, res) => {
+        try {
+            const deletedProvider = await HealthcareProviders.findByIdAndDelete(req.params.id);
+            if (!deletedProvider) {
+                return res.status(404).json({ message: "Provider not found" });
+            }
+            res.json({
+                message: "Provider deleted successfully",
+                data: deletedProvider
+            });
+        } catch (err) {
+            res.status(500).json({ message: err.message });
+        }
+    };
+    
+
 //     const addHordingWithFile = async (req, res) => {
 //   upload(req, res, async (err) => {
 //     if (err) {
@@ -57,5 +73,5 @@ const addHealthcareProviders = async (req, res) => {
 // };
 
 
-module.exports = { addHealthcareProviders, getHealthcareProviders,  };
+module.exports = { addHealthcareProviders, getHealthcareProviders, deleteHealthcareProvider  };
 

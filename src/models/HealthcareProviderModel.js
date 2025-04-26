@@ -1,4 +1,4 @@
-/*const mongoose = require("mongoose")
+const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const HealthcareProvidersSchema = new Schema({
@@ -16,13 +16,13 @@ const HealthcareProvidersSchema = new Schema({
         required: true,
     },
     contact_number:{
-        Type: Number,
+        type: Number,
     },
     email:{
-        Type:String,
+        type:String,
     },
     address:{
-        Type:String,
+        type:String,
     },
     created_at:{
         type: Date,
@@ -31,4 +31,4 @@ const HealthcareProvidersSchema = new Schema({
 
 })
 
-module.exports = mongoose.model("HealthcareProviders", HealthcareProvidersSchema)*/
+module.exports = mongoose.model("HealthcareProviders", HealthcareProvidersSchema)

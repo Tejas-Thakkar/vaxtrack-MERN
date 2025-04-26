@@ -30,46 +30,17 @@ const getVaccines = async (req, res) => {
   }
 };
 
-// Get Vaccine by ID
-// const getVaccineById = async (req, res) => {
-//   try {
-//     const vaccine = await Vaccine.findById(req.params.id);
-//     if (!vaccine) {
-//       return res.status(404).json({ message: "Vaccine not found" });
-//     }
-//     res.status(200).json({ data: vaccine });
-//   } catch (err) {
-//     res.status(500).json({ message: err.message });
-//   }
-// };
-
-// Update a Vaccine
-// const updateVaccine = async (req, res) => {
-//   try {
-//     const updatedVaccine = await Vaccine.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
-//     if (!updatedVaccine) {
-//       return res.status(404).json({ message: "Vaccine not found" });
-//     }
-//     res.status(200).json({
-//       message: "Vaccine updated successfully",
-//       data: updatedVaccine,
-//     });
-//   } catch (err) {
-//     res.status(400).json({ message: err.message });
-//   }
-// };
-
 // Delete a Vaccine
-// const deleteVaccine = async (req, res) => {
-//   try {
-//     const deletedVaccine = await Vaccine.findByIdAndDelete(req.params.id);
-//     if (!deletedVaccine) {
-//       return res.status(404).json({ message: "Vaccine not found" });
-//     }
-//     res.status(200).json({ message: "Vaccine deleted successfully" });
-//   } catch (err) {
-//     res.status(500).json({ message: err.message });
-//   }
-// };
+const deleteVaccine = async (req, res) => {
+  try {
+    const deletedVaccine = await Vaccine.findByIdAndDelete(req.params.id);
+    if (!deletedVaccine) {
+      return res.status(404).json({ message: "Vaccine not found" });
+    }
+    res.status(200).json({ message: "Vaccine deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
-module.exports = { addVaccine, getVaccines,}; //getVaccineById, updateVaccine, deleteVaccine };
+module.exports = { addVaccine, getVaccines, deleteVaccine}; //getVaccineById, updateVaccine,  };

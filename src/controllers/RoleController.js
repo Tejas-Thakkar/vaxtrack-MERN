@@ -24,7 +24,7 @@ const addRole = async (req, res) => {
         })
     }
  const deleteRole = async(req,res)=>{
-            const deletedRole = await roleModel.findByIdAndDelete(req.param.id)
+            const deletedRole = await roleModel.findByIdAndDelete(req.params.id)
 
             res.json({
                 message:"role deleted successfully",

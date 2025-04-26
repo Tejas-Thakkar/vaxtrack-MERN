@@ -6,7 +6,7 @@ const roleSchema = new Schema({
     name:{
         type:String,
     },
-    description:{
+    role:{
         type:String
     }
 

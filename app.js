@@ -33,6 +33,18 @@ app.use("/appointment",AppointmentRoutes)
 const HealthcareProvidersRoute = require("./src/routes/HealthcareProviderRoute")
 app.use("/heathcareprovider", HealthcareProvidersRoute )
 
+const PatientRoute = require("./src/routes/PatientRoute")
+app.use("/patient",PatientRoute) 
+
+const AdminRoute = require("./src/routes/AdminRoute")
+app.use("/admin",AdminRoute)
+
+const VaccineCenterRoute = require("./src/routes/VaccineCenterRoutes")
+app.use("/vaccinecenter",VaccineCenterRoute)
+
+// const RegisteredRoutes = require("./src/routes/RegisteredRoute")
+// app.use("/registered",RegisteredRoutes)
+
 
 mongoose.connect("mongodb://127.0.0.1:27017/new_folder").then(()=>{
     console.log("database connected..")

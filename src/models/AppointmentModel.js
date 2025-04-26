@@ -6,7 +6,7 @@ const AppointmentSchema = new Schema({
   age: { type: Number, required: true, min: 0 },
   gender: { type: String, enum: ["Male", "Female", "Other"]}, //required: true },
   
-  vaccineId: { type: mongoose.Schema.Types.ObjectId, ref: "Vaccine"}, //required: true },
+  vaccineId: { type: mongoose.Schema.Types.ObjectId, ref: "Vaccine", required: true },
 
   ProviderType:{
     enum: ['City Health Center', 'owntown Clinic', 'Community Hospital', 'VaccinationCentre'],
@@ -19,12 +19,12 @@ const AppointmentSchema = new Schema({
   stateId:{
     type: Schema.Types.ObjectId,
     ref: 'State',
-    //required: true
+    required: true
 },
-  cityId: { type: mongoose.Schema.Types.ObjectId, ref: "City"}, //required: true },
+  cityId: { type: mongoose.Schema.Types.ObjectId, ref: "City", required: true },
   areaId: { type: mongoose.Schema.Types.ObjectId, ref: "Area"}, //required: true },
-  appointmentDate: { type: Date}, //required: true }, // Already present, just ensuring it's there
-  status: { type: String, enum: ["Scheduled", "Completed", "Cancelled"], default: "Scheduled" },
+  appointmentDate: { type: Date, required: true }, // Already present, just ensuring it's there
+  status: { type: String, enum: ["Scheduled", "Completed", "Cancelled"], default: "Scheduled",required: true },
   created_at: { type: Date, default: Date.now },
 });
 
